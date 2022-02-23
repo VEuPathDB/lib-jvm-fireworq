@@ -5,7 +5,19 @@ plugins {
 }
 
 group = "org.veupathdb.lib"
-version = "1.0.0"
+version = "1.0.1"
+
+java {
+  toolchain {
+    languageVersion.set(JavaLanguageVersion.of(11))
+  }
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+  kotlinOptions {
+    jvmTarget = "11"
+  }
+}
 
 repositories {
   mavenCentral()
@@ -22,9 +34,8 @@ repositories {
 
 dependencies {
   implementation(kotlin("stdlib"))
-  implementation(kotlin("stdlib-jdk8"))
 
-  api("org.veupathdb.lib:jackson-singleton:2.0.0")
+  api("org.veupathdb.lib:jackson-singleton:2.0.1")
 }
 
 java {
