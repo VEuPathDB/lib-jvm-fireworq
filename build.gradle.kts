@@ -36,7 +36,7 @@ publishing {
   repositories {
     maven {
       name = "GitHub"
-      url  = uri("https://maven.pkg.github.com/veupathdb/lib-jackson-singleton")
+      url  = uri("https://maven.pkg.github.com/veupathdb/lib-jvm-fireworq")
       credentials {
         username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
         password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
@@ -50,7 +50,7 @@ publishing {
       pom {
         name.set("JaxRS Container Core Library")
         description.set("Provides base methods, endpoints, server setup, and utilities for use in containerized VEuPathDB JaxRS based applications.")
-        url.set("https://github.com/VEuPathDB/lib-jackson-singleton")
+        url.set("https://github.com/VEuPathDB/lib-jvm-fireworq")
         developers {
           developer {
             id.set("epharper")
@@ -61,9 +61,9 @@ publishing {
           }
         }
         scm {
-          connection.set("scm:git:git://github.com/VEuPathDB/lib-jackson-singleton.git")
-          developerConnection.set("scm:git:ssh://github.com/VEuPathDB/lib-jackson-singleton.git")
-          url.set("https://github.com/VEuPathDB/lib-jackson-singleton")
+          connection.set("scm:git:git://github.com/VEuPathDB/lib-jvm-fireworq.git")
+          developerConnection.set("scm:git:ssh://github.com/VEuPathDB/lib-jvm-fireworq.git")
+          url.set("https://github.com/VEuPathDB/lib-jvm-fireworq")
         }
       }
     }
