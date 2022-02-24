@@ -9,8 +9,8 @@ data class NewJobResponse(
   @JsonProperty("category")   val category:   String,
   @JsonProperty("url")        val url:        String,
   @JsonProperty("payload")    val payload:    JsonNode,
-  @JsonProperty("runAfter")   val runAfter:   Int,
-  @JsonProperty("maxRetries") val maxRetries: Int,
-  @JsonProperty("retryDelay") val retryDelay: Int,
+  @JsonProperty("run_after")   val runAfter:   Int,
+  @JsonProperty("max_retries") val maxRetries: Int,
+  @JsonProperty("retry_delay") val retryDelay: Int,
   @JsonProperty("timeout")    val timeout:    Int,
 )
