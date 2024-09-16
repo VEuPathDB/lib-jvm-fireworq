@@ -1,21 +1,14 @@
 plugins {
-  `java-library`
   `maven-publish`
-  kotlin("jvm") version "1.6.10"
+  kotlin("jvm") version "2.0.20"
 }
 
 group = "org.veupathdb.lib"
-version = "1.0.3"
+version = "1.0.4"
 
-java {
-  toolchain {
-    languageVersion.set(JavaLanguageVersion.of(11))
-  }
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-  kotlinOptions {
-    jvmTarget = "11"
+kotlin {
+  jvmToolchain {
+    languageVersion.set(JavaLanguageVersion.of(21))
   }
 }
 
@@ -35,7 +28,7 @@ repositories {
 dependencies {
   implementation(kotlin("stdlib"))
 
-  api("org.veupathdb.lib:jackson-singleton:2.0.1")
+  api("org.veupathdb.lib:jackson-singleton:3.2.0")
 }
 
 java {

@@ -213,7 +213,7 @@ object Fireworq {
   ): NewJobResponse {
     val res = HttpClient.newHttpClient().send(
       HttpRequest.newBuilder(URI.create(categoryURL(url, category)))
-        .POST(HttpRequest.BodyPublishers.ofString(Json.from(request).toString()))
+        .POST(HttpRequest.BodyPublishers.ofString(Json.convert(request).toString()))
         .build(),
       HttpResponse.BodyHandlers.ofString()
     )
@@ -248,7 +248,7 @@ object Fireworq {
   ): T {
     val res = HttpClient.newHttpClient().send(
       HttpRequest.newBuilder(URI.create(url))
-        .PUT(HttpRequest.BodyPublishers.ofString(Json.from(bod).toString()))
+        .PUT(HttpRequest.BodyPublishers.ofString(Json.convert(bod).toString()))
         .build(),
       HttpResponse.BodyHandlers.ofString()
     )
